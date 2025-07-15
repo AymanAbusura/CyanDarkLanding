@@ -550,7 +550,9 @@ section.what {
 }
 
 .block__row__about {
+    position: relative;
     align-items: center;
+    z-index: 2;
 }
 
 .hero-about {
