@@ -345,7 +345,7 @@ p+p{
 	margin-inline:auto;
 	max-width:450px
 }
-input{
+input, textarea {
 	background: #353535;
 	border-radius:50px;
 	padding:13px 20px;
@@ -381,7 +381,6 @@ input{
 	font-size:18px
 }
 textarea{
-	border:1px solid #d5d9ed;
 	border-radius:10px;
 	padding:13px 20px;
 	font-weight:500;
@@ -447,8 +446,8 @@ textarea{
 	margin-bottom:10px
 }
 .form-contact{
-	margin-inline:auto;
-	max-width:630px
+	margin-inline: auto;
+	max-width: 650px;
 }
 .card__img img,.holder__image img{
 	max-width:100%
@@ -735,9 +734,7 @@ textarea{
 	word-break:normal;
 	gap:10px
 }
-.benefit{
-	padding-top:0
-}
+
 .benefit__col,.benefit__row{
 	display:-webkit-box;
 	display:-ms-flexbox;
@@ -844,10 +841,10 @@ textarea{
 .terms{
 	padding-block:30px
 }
-.policy a,.terms a{
+.policy a, .terms a {
 	display:inline-block;
 	font-weight:700;
-	color:#fd8704
+	color: #78bfbb;
 }
 .policy p+.title-3,.terms p+.title-3{
 	padding-top:20px
@@ -887,8 +884,9 @@ textarea{
 	padding:5px
 }
 table{
-	margin:20px 0;
-	border-collapse:collapse
+	margin: 20px 0;
+	color: #aaa;
+	border-collapse: collapse;
 }
 table p+p{
 	margin-top:10px
@@ -1181,8 +1179,8 @@ table p+p{
 		height:36px
 }
 	.icon-circle{
-		width:40px;
-		height:40px
+		width:30px;
+		height:30px
 }
 	.benefit__row{
 		-ms-flex-wrap:nowrap;

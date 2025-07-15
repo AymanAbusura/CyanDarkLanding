@@ -1,25 +1,37 @@
 window.onload = function() {;
-    var toggleLink = document.getElementById('toggle')
-    var submenu = toggleLink.nextElementSibling
-    toggleLink.addEventListener('click', function(e) {
-        e.stopPropagation()
-        if (submenu.style.display === 'block') {
-            submenu.style.display = 'none'
-        } else {
-            submenu.style.display = 'block'
-        }
-    })
-    document.addEventListener('click', function(e) {
-        if (submenu.style.display === 'block' && e.target !== toggleLink && !submenu.contains(e.target)) {
-            submenu.style.display = 'none'
-        }
-    })
-    submenu.addEventListener('click', function(e) {
-        if (e.target.tagName === 'A') {
-            submenu.style.display = 'none'
-        }
-    })
-    var buttons = document.querySelectorAll(".btn-cta");
+    // More Efficient than the upper
+    function setupToggle(toggleId) {
+        var toggleLink = document.getElementById(toggleId);
+        if (!toggleLink) return;
+
+        var submenu = toggleLink.nextElementSibling;
+        toggleLink.addEventListener('click', function (e) {
+            e.stopPropagation();
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.addEventListener('click', function (e) {
+            if (submenu.style.display === 'block' && e.target !== toggleLink && !submenu.contains(e.target)) {
+                submenu.style.display = 'none';
+            }
+        });
+
+        submenu.addEventListener('click', function (e) {
+            if (e.target.tagName === 'A') {
+                submenu.style.display = 'none';
+            }
+        });
+
+        submenu.style.maxHeight = "300px";
+        submenu.style.overflowY = "auto";
+    }
+
+    setupToggle('toggle');
+    setupToggle('mobile-toggle');
+    setupToggle('toggle-1');
+
+    // Scroll
+    var buttons = document.querySelectorAll(".scroll_btn");
     var form = document.getElementById("form");
     if (buttons.length > 0) {
         for (var i = 0; i < buttons.length; i++) {
@@ -30,17 +42,43 @@ window.onload = function() {;
             });
         }
     }
-    var domainName = window.location.hostname;
-    var replaceableTextElements = document.querySelectorAll(".domain");
-    if (replaceableTextElements.length > 0) {
-        replaceableTextElements.forEach(function(element) {
-            element.textContent = domainName;
-        });
+
+    // FAQ
+    function toggleReadMore(button) {
+        var moreText = button.previousElementSibling.querySelector(".more-text");
+
+        if (moreText.style.display === "none" || moreText.style.display === "") {
+            moreText.style.display = "inline";
+            button.innerText = "Read less";
+        } else {
+            moreText.style.display = "none";
+            button.innerText = "Read more";
+        }
     }
+
+    window.toggleReadMore = toggleReadMore;
+
+
+
+    // замена домена
+    var domainName = "monitrexpro.com";
+    var replaceableTextElements = document.querySelectorAll(".domain");
+    replaceableTextElements.forEach(function(element) {
+        if (element.classList.contains("email")) {
+            var currentEmail = element.textContent;
+            var emailParts = currentEmail.split('@');
+            element.textContent = emailParts[0] + '@' + domainName;
+        } else {
+            element.textContent = domainName;
+        }
+    });
+
     var emailLinks = document.querySelectorAll(".mail-link");
     emailLinks.forEach(function(emailLink) {
         emailLink.href = "mailto:support@" + domainName;
-    });;
+    });
+    // Конец
+
     const spoilersArray = document.querySelectorAll("[data-spoilers]");
     if (spoilersArray.length > 0) {
         const spoilersRegulars = Array.from(spoilersArray).filter(function(item, index, self) {
@@ -151,6 +189,7 @@ window.onload = function() {;
             }
         }
     }
+    
     let _slideUp = (target, duration = 500) => {
         if (!target.classList.contains("_slide")) {
             target.classList.add("_slide");

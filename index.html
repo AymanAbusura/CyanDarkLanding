@@ -13,57 +13,45 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.ico">
 
-<!-- <style>
-  .video-thumbnail {
-    position: relative;
-    max-width: 700px;
-    margin: 0 auto;
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
-  }
+    <link rel="alternate" hreflang="x-default" href="https://the-ShaddersAgent.com/">
+    <link rel="alternate" hreflang="cs" href="https://the-ShaddersAgent.com/languages/cz/">
+    <link rel="alternate" hreflang="de" href="https://the-ShaddersAgent.com/languages/de/">
+    <link rel="alternate" hreflang="dk" href="https://the-ShaddersAgent.com/languages/dk/">
+    <link rel="alternate" hreflang="en" href="https://the-ShaddersAgent.com/languages/en/">
+    <link rel="alternate" hreflang="es" href="https://the-ShaddersAgent.com/languages/es/">
+    <link rel="alternate" hreflang="fi" href="https://the-ShaddersAgent.com/languages/fi/">
+    <link rel="alternate" hreflang="fr" href="https://the-ShaddersAgent.com/languages/fr/">
+    <link rel="alternate" hreflang="gr" href="https://the-ShaddersAgent.com/languages/gr/">
+    <link rel="alternate" hreflang="hu" href="https://the-ShaddersAgent.com/languages/hu/">
+    <link rel="alternate" hreflang="it" href="https://the-ShaddersAgent.com/languages/it/">
+    <link rel="alternate" hreflang="nl" href="https://the-ShaddersAgent.com/languages/nl/">
+    <link rel="alternate" hreflang="no" href="https://the-ShaddersAgent.com/languages/no/">
+    <link rel="alternate" hreflang="pl" href="https://the-ShaddersAgent.com/languages/pl/">
+    <link rel="alternate" hreflang="pt" href="https://the-ShaddersAgent.com/languages/pt/">
+    <link rel="alternate" hreflang="ru" href="https://the-ShaddersAgent.com/languages/ru/">
+    <link rel="alternate" hreflang="se" href="https://the-ShaddersAgent.com/languages/se/">
+        
+    <link rel="canonical" href="https://the-ShaddersAgent.com/">
 
-  .video-thumbnail img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(5px);
-    transition: 0.3s;
-  }
-
-  .play-button:hover {
-    background: rgba(255, 255, 255, 0.4);
-  }
-
-  .play-button::before {
-    content: '';
-    border-style: solid;
-    border-width: 12px 0 12px 20px;
-    border-color: transparent transparent transparent white;
-    display: block;
-    margin-left: 5px;
-  }
-
-  .stretched-video {
-    width: 100%;
-    height: 400px;
-    border: none;
-  }
-</style> -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://the-ShaddersAgent.com/",
+          "@type": "Product",
+          "name": "ShaddersAgent",
+          "image": "https://the-ShaddersAgent.com/assets/logo.svg",
+          "description": "AI-powered crypto trading assistant",
+          "brand": {
+            "@type": "Brand",
+            "name": "ShaddersAgent"
+          },
+          "offers": {
+            "@type": "SoftwareApplication",
+            "priceCurrency": "USD",
+            "price": "250.00",
+            "availability": "https://the-Shadders-Agent.com/InStock"
+          }
+        }
+    </script>
 
 </head>
 <body>
@@ -130,7 +118,7 @@
                   <li><a href="/">Home</a></li>
                   <li><a href="/pages/about/">About Us</a></li>
                   <li><a href="/pages/login/">Login</a></li>
-                  <li><a href="/pages/contact/">Contact Page</a></li>
+                  <li><a href="/pages/contact/">Contact Us</a></li>
                 </ul>
             </div>
         </div>
@@ -233,9 +221,12 @@
                 </div>
             </div>
         </div>
-        <div class="video-thumbnail has-overlay" id="videoContainer">
-            <img id="videoThumbnail" src="assets/thumbnail.jpg" alt="How to Invest Profitably">
-            <div class="play-button" id="playPauseBtn"></div>
+        <div class="overlay-media-wrapper">
+            <div class="flash__1"></div>
+            <div class="video-thumbnail has-overlay" id="videoContainer">
+                <img id="videoThumbnail" src="assets/thumbnail.jpg" alt="How to Invest Profitably">
+                <div class="play-button" id="playPauseBtn"></div>
+            </div>
         </div>
     </section>
 
@@ -334,15 +325,11 @@
                             Your browser does not support the video tag.
                         </video>
                     <div class="faq__column__1">
-                        <!-- <video class="faq__video" width="100%" autoplay muted loop playsinline>
-                            <source src="assets/faq.webm" type="video/webm">
-                            Your browser does not support the video tag.
-                        </video> -->
                         <h2 class="title-sth center">Something in <span class="accent">mind</span>?</h2>
                         <p>Contact us and we will answer any of your questions!</p>
                         <div class="buttons">
-                            <div class="btn">Contact Us</div>
-                            <div class="btn">Login</div>
+                            <a href="/pages/contact"><div class="btn">Contact Us</div>
+                            <a href="/pages/login"><div class="btn btn-new">Login</div>
                         </div>
                     </div>
                 </div>
@@ -371,7 +358,18 @@
 
         <div class="footer-bottom">
             <div class="container">
-                <div class="flex-bl">
+                <div class="flex-bl ">
+                    <div class="social-icons">
+                        <a class="icon-circle" aria-label="X">
+                            <img src="assets/x-icon.svg" alt="X icon">
+                        </a>
+                        <a class="icon-circle" aria-label="Facebook">
+                            <img src="assets/facebook-icon.svg" alt="Facebook icon">
+                        </a>
+                        <a class="icon-circle" aria-label="Instagram">
+                            <img src="assets/instagram-icon.svg" alt="Instagram icon">
+                        </a>
+                    </div>
                     <div class="copyright">© Copyright ShaddersAgent, All Rights Reserved</div>
                 </div>
             </div>
